@@ -9,15 +9,25 @@ namespace Tablero {
             tablero = new Pieza[DIM, DIM];
             InicializaTablero();
         }
-
+        /**
+         * Inicializa el tablero a su estado inicial.
+         */
         private void InicializaTablero() {
             for (int i = 0; i < DIM; i++)
                 for (int j = 0; j < DIM; j++)
                     tablero[i, j] = null;
             tablero[0, 0] = new Torre(Color.NEGRA);
 
-        }
+            tablero[0, 4] = new Rey(Color.NEGRA);
 
+            tablero[DIM-1, 0] = new Torre(Color.BLANCA);
+
+            tablero[DIM-1, 4] = new Rey(Color.BLANCA);
+
+        }
+        /**
+         * 
+         */
         public bool PuedeMover(int x, int y, int nX, int nY) {
             if (nX >= Const.DIM || nY >= Const.DIM || nX < 0 || nY < 0)
                 return false;

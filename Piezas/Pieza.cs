@@ -4,6 +4,9 @@ using util = Util.Util;
 namespace Piezas {
     public enum Tipo {REY, REINA, TORRE, ALFIL, CABALLO, PEON}
     public enum Color {BLANCA=1, NEGRA=0}
+    /**
+     * Clase abstracta Pieza
+     */
     public abstract class Pieza {
         public Color Color { get; private set; }
         public Tipo Tipo { get; private set; }
@@ -13,6 +16,9 @@ namespace Piezas {
             Color = c;
             Tipo = t;
         }
+        /**
+         * Actualiza el valor de X e Y
+         */
         public void Mover(int x, int y) {
             X = x;
             Y = y;
