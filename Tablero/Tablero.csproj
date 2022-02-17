@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Chess\Chess.csproj" />
     <ProjectReference Include="..\Piezas\Piezas.csproj" />
   </ItemGroup>
 
