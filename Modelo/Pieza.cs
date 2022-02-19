@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Modelo {
+﻿namespace Modelo {
     public enum Tipo { REY, REINA, TORRE, ALFIL, CABALLO, PEON }
     public enum Color { BLANCA = 1, NEGRA = 0 }
     /**
@@ -34,11 +32,18 @@ namespace Modelo {
         protected static int Abs(int i) {
             return i < 0 ? -i : i;
         }
+
+        public override string ToString() {
+            return (_Color == Color.NEGRA ? "N" : "B");
+        }
     }
     public class Torre: Pieza {
         public Torre(Color c, Tablero tab) : base(c, Tipo.TORRE, tab) { }
         public override bool Puede_Mover(int x, int y) {
             return EsLineaRecta(x, y);
+        }
+        public override string ToString() {
+            return "T" + base.ToString();
         }
     }
     public class Rey: Pieza {
@@ -46,17 +51,26 @@ namespace Modelo {
         public override bool Puede_Mover(int x, int y) {
             return Abs(x) <= 1 && Abs(y) <= 1;
         }
+        public override string ToString() {
+            return "♔" + base.ToString();
+        }
     }
     public class Reina: Pieza {
         public Reina(Color c, Tablero tab) : base(c, Tipo.REINA, tab) { }
         public override bool Puede_Mover(int x, int y) {
             return EsLineaRecta(x, y) || EsDiagonal(x, y);
         }
+        public override string ToString() {
+            return "Q" + base.ToString();
+        }
     }
     public class Alfil: Pieza {
         public Alfil(Color c, Tablero tab) : base(c, Tipo.ALFIL, tab) { }
         public override bool Puede_Mover(int x, int y) {
             return EsDiagonal(x, y);
+        }
+        public override string ToString() {
+            return "A" + base.ToString();
         }
     }
     public class Peon: Pieza {
@@ -80,6 +94,9 @@ namespace Modelo {
             }
             return false;
         }
+        public override string ToString() {
+            return "P" + base.ToString();
+        }
     }
     public class Caballo: Pieza {
         public Caballo(Color c, Tablero tab) : base(c, Tipo.ALFIL, tab) { }
@@ -87,6 +104,9 @@ namespace Modelo {
             bool result = Abs(y - Y) == 2 && Abs(x - X) == 1;
             result = result || (Abs(y - Y) == 1 && Abs(x - X) == 2);
             return result;
+        }
+        public override string ToString() {
+            return "C" + base.ToString();
         }
     }
 }

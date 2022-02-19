@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Modelo {
+﻿namespace Modelo {
     public struct Numero_Piezas {
         const int REY = 1;
         const int REINA = 1;

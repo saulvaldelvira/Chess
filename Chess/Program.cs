@@ -1,9 +1,8 @@
-﻿using System;
-
-namespace Chess {
+﻿namespace Chess {
     internal class Program {
         static void Main(string[] args) {
-            Console.WriteLine("Helloo World!");
+            Juego j = new Juego();
+            j.Run();
         }
     }
 }
