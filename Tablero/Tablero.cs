@@ -1,3 +1,0 @@
-﻿using Piezas;
-namespace Tablero {
-    }
