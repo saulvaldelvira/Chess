@@ -41,7 +41,6 @@ namespace Modelo {
             return EsLineaRecta(x, y);
         }
     }
-
     public class Rey: Pieza {
         public Rey(Color c, Tablero tab) : base(c, Tipo.REY, tab) { }
         public override bool Puede_Mover(int x, int y) {
